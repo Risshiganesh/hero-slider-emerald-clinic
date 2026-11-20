@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Demo Showcase Stylesheet (style.css)
+   Imports the modular bm-swiper.css and adds presentation styling for index.html.
+   None of these styles leak into or are required for client websites.
+   ========================================================================== */
+
+@import url('bm-swiper.css');
+
+:root {
+  --demo-bg: #090d16;
+  --demo-card: #111827;
+  --demo-border: rgba(255, 255, 255, 0.08);
+  --demo-text: #f3f4f6;
+  --demo-muted: #9ca3af;
+  --demo-accent: #38bdf8;
+}
+
+body.demo-body {
+  margin: 0;
+  padding: 2.5rem 1rem;
+  background-color: var(--demo-bg);
+  color: var(--demo-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.demo-wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Example Client Container demonstrating full width and height filling */
+.demo-client-container {
+  width: 100%;
+  height: 560px;
+  position: relative;
+}
+
+/* Header */
+.demo-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.demo-badge-top {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--demo-accent);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+}
+
+.demo-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.demo-desc {
+  max-width: 680px;
+  color: var(--demo-muted);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  margin: 0;
+}
+
+.demo-desc code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  color: var(--demo-accent);
+  font-size: 0.9em;
+}
+
+/* Live Diagnostics Pill */
+.demo-diagnostics {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--demo-card);
+  border: 1px solid var(--demo-border);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  color: var(--demo-muted);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.demo-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.demo-sep {
+  opacity: 0.3;
+}
+
+/* Integration Guide */
+.demo-integration-guide {
+  background: var(--demo-card);
+  border: 1px solid var(--demo-border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.guide-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1.25rem;
+  color: var(--demo-muted);
+}
+
+.guide-steps li {
+  line-height: 1.6;
+}
+
+.guide-steps strong {
+  color: var(--demo-text);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.guide-steps pre {
+  background: #06090e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0 0;
+}
+
+.guide-steps code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88rem;
+  color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  body.demo-body {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .demo-diagnostics {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .demo-sep {
+    display: none;
+  }
+
+  .demo-integration-guide {
+    padding: 1.25rem;
+  }
+}

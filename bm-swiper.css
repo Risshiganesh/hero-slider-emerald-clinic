@@ -1,0 +1,366 @@
+/**
+ * ByteMetrica Modular Swiper Stylesheet (bm-swiper.css)
+ * 100% Scoped: All selectors are strictly namespaced to .bm-swiper-module
+ * Safe to drop into ANY client website without CSS conflicts or overrides.
+ *
+ * Built by ByteMetrica (https://bytemetrica.com)
+ */
+
+/* ==========================================================================
+   CSS Custom Properties (Easily customizable by client theme)
+   ========================================================================== */
+.bm-swiper-module {
+  --bm-primary: #3b82f6;
+  --bm-primary-glow: rgba(59, 130, 246, 0.5);
+  --bm-btn-bg: rgba(15, 23, 42, 0.5);
+  --bm-btn-border: rgba(255, 255, 255, 0.18);
+  --bm-btn-color: #ffffff;
+  --bm-btn-hover-bg: #2563eb;
+  --bm-text-light: #ffffff;
+  --bm-text-muted: rgba(255, 255, 255, 0.75);
+  --bm-radius: 20px;
+  --bm-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.bm-swiper-module *,
+.bm-swiper-module *::before,
+.bm-swiper-module *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Main Swiper Box & Container (Fills 100% Width & Height of Parent)
+   ========================================================================== */
+.bm-swiper-module .bm-slider-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--bm-radius);
+  overflow: hidden;
+  background-color: #0b0f19;
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Touch optimizations */
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Swiper Core Containers fill 100% height and width */
+.bm-swiper-module .swiper,
+.bm-swiper-module .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide elements */
+.bm-swiper-module .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* GPU Hardware Acceleration */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Responsive Picture & Images */
+.bm-swiper-module .bm-picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bm-swiper-module .bm-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none; /* Prevents desktop browser ghost dragging */
+}
+
+/* Slide Caption Overlay */
+.bm-swiper-module .bm-slide-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  padding: clamp(1.5rem, 4vw, 3rem);
+  pointer-events: none;
+}
+
+.bm-swiper-module .bm-slide-content {
+  max-width: 650px;
+  color: var(--bm-text-light);
+  pointer-events: auto;
+}
+
+.bm-swiper-module .bm-slide-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.bm-swiper-module .bm-slide-title {
+  font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.bm-swiper-module .bm-slide-description {
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  color: var(--bm-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   "Built by ByteMetrica" Branding Badge
+   ========================================================================== */
+.bm-swiper-module .bm-credit-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: var(--bm-transition-smooth);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.bm-swiper-module .bm-credit-badge:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+}
+
+.bm-swiper-module .bm-credit-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.bm-swiper-module .bm-credit-brand {
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   Elegant Left & Right Navigation Buttons
+   ========================================================================== */
+.bm-swiper-module .bm-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bm-btn-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--bm-btn-border);
+  color: var(--bm-btn-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: var(--bm-transition-smooth);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bm-swiper-module .bm-nav-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  transition: transform 0.25s ease;
+}
+
+.bm-swiper-module .bm-nav-btn:hover {
+  background: var(--bm-btn-hover-bg);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 25px var(--bm-primary-glow);
+}
+
+.bm-swiper-module .bm-nav-prev {
+  left: 20px;
+}
+
+.bm-swiper-module .bm-nav-prev:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.bm-swiper-module .bm-nav-next {
+  right: 20px;
+}
+
+.bm-swiper-module .bm-nav-next:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+.bm-swiper-module .bm-nav-btn:disabled,
+.bm-swiper-module .bm-nav-btn.swiper-button-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Autoplay Time-Interval Progress Bar
+   ========================================================================== */
+.bm-swiper-module .bm-progress-bar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 25;
+  overflow: hidden;
+}
+
+.bm-swiper-module .bm-progress-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #38bdf8, #3b82f6);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Pagination Styling (Dynamic Modern Bullets)
+   ========================================================================== */
+.bm-swiper-module .swiper-pagination {
+  bottom: 22px !important;
+  z-index: 20;
+}
+
+.bm-swiper-module .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 0.6;
+  transition: var(--bm-transition-smooth);
+  margin: 0 5px !important;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Expanded touch target for thumb accuracy */
+.bm-swiper-module .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -8px;
+  right: -8px;
+}
+
+.bm-swiper-module .swiper-pagination-bullet-active {
+  width: 26px;
+  border-radius: 8px;
+  background: var(--bm-primary) !important;
+  opacity: 1;
+  box-shadow: 0 0 12px var(--bm-primary-glow);
+}
+
+/* ==========================================================================
+   Mobile & Responsive Platform Breakpoints (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .bm-swiper-module .bm-slider-frame {
+    border-radius: 16px;
+  }
+
+  /* Elegant compact navigation buttons on mobile */
+  .bm-swiper-module .bm-nav-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(15, 23, 42, 0.65);
+  }
+
+  .bm-swiper-module .bm-nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bm-swiper-module .bm-nav-prev {
+    left: 10px;
+  }
+
+  .bm-swiper-module .bm-nav-next {
+    right: 10px;
+  }
+
+  .bm-swiper-module .bm-credit-badge {
+    top: 12px;
+    right: 12px;
+    padding: 5px 11px;
+    font-size: 0.7rem;
+  }
+
+  .bm-swiper-module .bm-slide-overlay {
+    padding: 1.5rem 1.25rem 2.5rem;
+  }
+}

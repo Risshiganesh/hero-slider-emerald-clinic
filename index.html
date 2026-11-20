@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Modular Responsive Swiper — Built by ByteMetrica</title>
+
+  <!-- 1. Swiper.js CSS from CDN (Required dependency) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- 2. ByteMetrica Modular Swiper CSS -->
+  <link rel="stylesheet" href="bm-swiper.css" />
+
+  <!-- 3. Demo Showcase Styles (Not needed for client sites) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="demo-body">
+
+  <main class="demo-wrapper">
+    <!-- Showcase Header -->
+    <header class="demo-header">
+      <div class="demo-badge-top">ByteMetrica Component</div>
+      <h1 class="demo-title">Hero Images Carousel Swiper</h1>
+      <!-- <p class="demo-desc">
+        Touch-optimized, zero-CSS-leak module designed for fast client integration.
+        Features platform folder switching (<code>images/desktop/</code> vs <code>images/mobile/</code>),
+        elegant navigation buttons, and time-interval auto-progression.
+      </p> -->
+
+      <!-- Live Diagnostics Indicator -->
+      <div class="demo-diagnostics">
+        <span class="demo-live-dot"></span>
+        <span id="demoViewport">Viewport: 0px</span>
+        <span class="demo-sep">|</span>
+        <span id="demoMode">Detecting...</span>
+        <span class="demo-sep">|</span>
+        <span id="demoFolder">Folder: images/...</span>
+      </div>
+    </header>
+
+    <!-- =====================================================================
+         START: COPY-PASTE MODULE (Fills 100% width & 100% height of parent container)
+         ===================================================================== -->
+    <div class="demo-client-container">
+      <div class="bm-swiper-module" data-bm-swiper data-interval="4000" data-speed="650">
+        
+        <div class="bm-slider-frame">
+
+          <!-- Time-Interval Progress Bar -->
+          <div class="bm-progress-bar-wrapper" aria-hidden="true">
+            <div class="bm-progress-bar-fill"></div>
+          </div>
+
+          <!-- Built by ByteMetrica Badge -->
+          <a href="https://bytemetrica.com" target="_blank" rel="noopener noreferrer" class="bm-credit-badge" aria-label="Built by ByteMetrica">
+            <span class="bm-credit-dot"></span>
+            <span>Built by</span>
+            <span class="bm-credit-brand">ByteMetrica</span>
+          </a>
+
+          <!-- Swiper Container -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <picture class="bm-picture">
+                  <!-- Mobile Folder (< 768px) -->
+                  <source media="(max-width: 768px)" srcset="images/mobile/slide-1.jpg" />
+                  <!-- Desktop Folder (>= 769px) -->
+                  <img src="images/desktop/slide-1.jpg" alt="Dr. Ram Consulting" class="bm-slide-img" loading="eager" decoding="async" />
+                </picture>
+                <div class="bm-slide-overlay">
+                  <div class="bm-slide-content">
+                    <span class="bm-slide-tag">Dermatology</span>
+                    <h2 class="bm-slide-title">Dr. Ram Consulting</h2>
+                    <p class="bm-slide-description">In-depth dermatological consultation and personalized skin health evaluation with Dr. Ram.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <picture class="bm-picture">
+                  <source media="(max-width: 768px)" srcset="images/mobile/slide-2.jpg" />
+                  <img src="images/desktop/slide-2.jpg" alt="Dr. Ram Diagnosing Skin Treatment" class="bm-slide-img" loading="lazy" decoding="async" />
+                </picture>
+                <div class="bm-slide-overlay">
+                  <div class="bm-slide-content">
+                    <span class="bm-slide-tag">Skin Treatment</span>
+                    <h2 class="bm-slide-title">Dr. Ram Diagnosing Skin Treatment</h2>
+                    <p class="bm-slide-description">Precision clinical diagnosis and targeted dermatological care planning for optimal skin recovery.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <picture class="bm-picture">
+                  <source media="(max-width: 768px)" srcset="images/mobile/slide-3.jpg" />
+                  <img src="images/desktop/slide-3.jpg" alt="Dr. Vennilaa Doing Hair Treatment" class="bm-slide-img" loading="lazy" decoding="async" />
+                </picture>
+                <div class="bm-slide-overlay">
+                  <div class="bm-slide-content">
+                    <span class="bm-slide-tag">Hair Treatment</span>
+                    <h2 class="bm-slide-title">Dr. Vennilaa Doing Hair Treatment</h2>
+                    <p class="bm-slide-description">Advanced clinical hair restoration therapies and comprehensive scalp health procedures.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <picture class="bm-picture">
+                  <source media="(max-width: 768px)" srcset="images/mobile/slide-4.jpg" />
+                  <img src="images/desktop/slide-4.jpg" alt="Dr. Vennilaa Consulting" class="bm-slide-img" loading="lazy" decoding="async" />
+                </picture>
+                <div class="bm-slide-overlay">
+                  <div class="bm-slide-content">
+                    <span class="bm-slide-tag">Consultation</span>
+                    <h2 class="bm-slide-title">Dr. Vennilaa Consulting</h2>
+                    <p class="bm-slide-description">Personalized medical and aesthetic consultations tailored to individual patient care goals.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Dynamic Pagination Dots -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Elegant Left Navigation Button -->
+          <button type="button" class="bm-nav-btn bm-nav-prev" aria-label="Previous Slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Elegant Right Navigation Button -->
+          <button type="button" class="bm-nav-btn bm-nav-next" aria-label="Next Slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <!-- =====================================================================
+         END: COPY-PASTE MODULE
+         ===================================================================== -->
+
+    <!-- Quick Integration Guide for Client Websites -->
+    <!-- <section class="demo-integration-guide">
+      <h2 class="guide-title">How to Paste Into a Client's Website</h2>
+      <ol class="guide-steps">
+        <li>
+          <strong>Step 1: Include Swiper &amp; ByteMetrica CSS in &lt;head&gt;:</strong>
+          <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /&gt;
+&lt;link rel="stylesheet" href="bm-swiper.css" /&gt;</code></pre>
+        </li>
+        <li>
+          <strong>Step 2: Paste the <code>&lt;div class="bm-swiper-module"&gt;</code> HTML block wherever you want the carousel.</strong>
+        </li>
+        <li>
+          <strong>Step 3: Include Swiper &amp; ByteMetrica JS at the bottom of &lt;body&gt;:</strong>
+          <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="bm-swiper.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Automatically initializes all [data-bm-swiper] elements
+  ByteMetricaSwiper.initAll();
+&lt;/script&gt;</code></pre>
+        </li>
+      </ol>
+    </section> -->
+
+  </main>
+
+  <!-- Swiper.js Core Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- ByteMetrica Modular Swiper Engine -->
+  <script src="bm-swiper.js"></script>
+
+  <!-- Demo & Initialization Script -->
+  <script src="script.js"></script>
+</body>
+</html>
